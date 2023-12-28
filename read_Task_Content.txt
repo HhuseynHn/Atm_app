@@ -1,0 +1,16 @@
+  0. calculyator hazirla
+  + 1. prompt ful name
+  + 2. min - 3; max -30; reqem olmamalidir
+  + 3. uzunluq 3-de az olarsa => 3dem az ola bilmez
+  + 4. uzunluq 30 dan xox olarsa  => 30 dan cox ola bilmez
+
+
+  + 5. pasword gotur min 8- 15 max-min
+  + 6. icinde min 3 herf olsun
+  + 7. biri boyuk herifle olsun
+  
+  8. email  => emil qaydaisna uygun
+  - 9. son .com ile bitsin
+  + 10. @ isaresi olmalidir icerisnde =>  ortada olsun
+  + 11. min bir reqemm olsun
+  + 12. min 10 olsun uzunlugu
