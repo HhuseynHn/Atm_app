@@ -1,4 +1,4 @@
-  0. calculyator hazirla
+  
   + 1. prompt ful name
   + 2. min - 3; max -30; reqem olmamalidir
   + 3. uzunluq 3-de az olarsa => 3dem az ola bilmez
@@ -10,7 +10,19 @@
   + 7. biri boyuk herifle olsun
   
   8. email  => emil qaydaisna uygun
-  - 9. son .com ile bitsin
-  + 10. @ isaresi olmalidir icerisnde =>  ortada olsun
-  + 11. min bir reqemm olsun
-  + 12. min 10 olsun uzunlugu
+   9. son .com ile bitsin
+   10. @ isaresi olmalidir icerisnde =>  ortada olsun
+   11. min bir reqemm olsun
+   12. min 10 olsun uzunlugu
+
+
+
+  + 13. yalniz icaze verilen aralig cixarda bilmek mumkun olsun
+  - 14. promptdan deyer isteyr balance bitene kimi deyer daxil etmek mumkun olsun
+  - 15. balance bitdikde balnce da olan qeder deyer daxil etmek mumkun olsun 
+  - 16. sonda balance bitdi gostersin
+
+// son hisse qalsin
+// evvelki validationlari funksay halina sal
+// ayri funksiyalardan istifade et
+// kecdiyimiz method lardan istifade ede bilerk

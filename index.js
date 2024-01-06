@@ -1,158 +1,133 @@
 /** @format */
-// ------------- Fulname control validation-------------------
+//------------------------ 1. Full Name control validation---------------------------------
 
-var fullName = prompt("Enter your full name");
-var isFullNameNumber = false;
-var isMinFullNameLength = false;
-var isMaxFullNameLength = false;
-var fullNameControl = false; // general Full name contorl
-fullName = fullName.trim();
-var fulnameLenght = fullName.length;
-console.log(fullName);
-for (let i = 0; i < fulnameLenght; i++) {
-  // number control
-  if (!isNaN(fullName[i])) {
-    isFullNameNumber = true;
-    alert("Don't use number in your Fullname");
-    break;
-  } else {
-    isFullNameNumber = false;
+// function fullNameLength(fullName) {
+//   // fullname length return
+//   var result = fullName.trim().length;
+//   return result;
+// }
+// var fullNameUser = prompt("Please enter your Full Name:");
+// var fullNameCount = fullNameLength(fullNameUser);
+
+// function fullNameLengthValidation(min, max) {
+//   // fullname length control
+//   var result;
+//   if (fullNameCount < min) {
+//     result = "lessThanMinLength";
+//   } else if (fullNameCount > max) {
+//     result = "moreThanMaxLength";
+//   }
+//   return result;
+// }
+// var fullNameValidationContrl= fullNameLengthValidation(3, 30);
+// if (fullNameValidationContrl == "lessThanMinLength") {
+//   alert("Full Name's length can't be less 3 simvol");
+// } else if (fullNameValidationContrl == "moreThanMaxLength") {
+//   alert("Full Name's length can't be more 30 simvol");
+// }
+
+//------------------------ END FUll Name control -------------------------------------------
+
+//------------------------ Password Control ------------------------------------------------
+
+var passwordUserInput = prompt("Enter your password");
+
+// start password length min max control ----
+function passwordLengthFunc(passwordUser) {
+  var result = passwordUser.length;
+  return result;
+}
+var passwordLength = passwordLengthFunc(passwordUserInput);
+function passwrodLengthValidation(min, max) {
+  var result;
+  if (passwordLength < min) {
+    result = "lessMin";
+  } else if (passwordLength > max) {
+    result = "moreMax";
+  }
+  return result;
+}
+var passwordLengthResult = passwrodLengthValidation(8, 15);
+var paswrMnMaxContrl = false;
+function passwordLengthControl() {
+  if (passwordLengthResult == "lessMin") {
+    alert("Password length can't be less 8 simvols");
+    paswrMnMaxContrl = true;
+  } else if (passwordLengthResult == "moreMax") {
+    alert("Password length can't be more 15 simvols");
+    paswrMnMaxContrl = true;
   }
 }
-if (!isFullNameNumber) {
-  //  full name length contorl
-  if (fulnameLenght > 3 && fulnameLenght < 30) {
-    isMinFullNameLength = true;
-    isMaxFullNameLength = true;
-  } else if (fulnameLenght < 3) {
-    isMinFullNameLength = false;
-    alert("Your Fullname's length don't use small than 3 simvol");
-  } else if (fulnameLenght > 30) {
-    isMaxFullNameLength = false;
-    alert("Your Fullname's length don't use large than 30 simvol");
-  }
-}
 
-if (isFullNameNumber && isMaxFullNameLength && isMinFullNameLength) {
-  // general full name control
-
-  fullNameControl = true;
-}
-
-// ------------- END ---- Fulname control validation-------------------
-
-// ---------------------- Paswword control validation --------------------
-var passwordValue = prompt("Please enter your password");
-var passwordLength = passwordValue.length;
-var minPaswrodLength = false;
-var maxPaswrodLength = false;
-var minAlphabet = 0;
-var matchPaswordAlphabet = false;
-var uppercaseLetter = false;
-var passwordControl = false;            // general password contorl
-if (passwordLength < 8) {
-  // min length control
-  alert("The length of the Passwrod can't be less 8 simvol ");
-  minPaswrodLength = true;
-} else if (passwordLength > 15) {
-  // max length control
-  alert("The length of the Passwrod can't be than more 15 simvol ");
-  maxPaswrodLength = true;
-}
-for (let i = 0; i < passwordLength; i++) {
-  if (
-    // alphabet control
-    (passwordValue.charCodeAt(i) >= 65 && passwordValue.charCodeAt(i) <= 90) || // upercase control
-    (passwordValue.charCodeAt(i) >= 97 && passwordValue.charCodeAt(i) <= 122) // lowercase control
-  ) {
-    minAlphabet += 1; // count letter
-  }
-
-  if (passwordValue.charCodeAt(i) >= 65 && passwordValue.charCodeAt(i) <= 90) {
-    uppercaseLetter = true; // only uppercase control
-  }
-}
-if (!minPaswrodLength && !maxPaswrodLength) {
-  if (minAlphabet >= 3) {
-    // min letter count control
-    matchPaswordAlphabet = true;
-  } else {
-    matchPaswordAlphabet = false;
-    alert("Letter count can't less 3 in Password ");
-  }
-
-  if (matchPaswordAlphabet) {
-    if (!uppercaseLetter) {
-      alert("One letter must uppercase in password");
+// Password min max control END ----------
+//-- password min 3 letter control
+function passwordMinLettrLength(paswrdInpt) {
+  var countLetr = 0;
+  for (let i = 0; i < paswrdInpt.length; i++) {
+    if (
+      (paswrdInpt.charCodeAt(i) >= 65 && paswrdInpt.charCodeAt(i) <= 90) ||
+      (paswrdInpt.charCodeAt(i) >= 97 && paswrdInpt.charCodeAt(i) <= 122)
+    ) {
+      countLetr += 1;
     }
   }
+  return countLetr;
 }
 
-if (
-  // general password cotrol
-  matchPaswordAlphabet &&
-  minPaswrodLength &&
-  maxPaswrodLength &&
-  uppercaseLetter
-) {
-  passwordControl = true;
-}
-// ----------------------- Password validation END ------------------------------
+var paswrMinLetrCntrl = false;
 
-
-//--------------------------- Email validation ---------------------
-var emailValue = prompt("Enter email");
-var emailLengthCntrol = false;
-var emailNumberControl = false;
-var emailAdControl = false;
-var emailEndwithControl = false;
-var emailEndWithLettr = "";
-var emailEndWithStart = false;
-var emailControlPart = true;
-
-for (let i = 0; i < emailValue.length; i++) {
-  if (emailValue.charCodeAt(i) >= 48 && emailValue.charCodeAt(i) <= 57) {
-    // for min one number control in email
-    emailNumberControl = true;
-  }
-  if (emailValue[i] == "@") {
-    // for @ simvol control
-    emailAdControl = true;
-  }
-  if (i == emailValue.length - 4) {
-    // for email end with control
-    emailEndWithStart = true;
-  }
-  if (emailEndWithStart) {
-    //  email endwith simvol count
-    emailEndWithLettr += emailValue[i];
+function passwordControl(passwordMinVlue, minLetter) {
+  if (passwordMinVlue < minLetter) {
+    paswrMinLetrCntrl = true;
+    alert("Minimum must be 3 lettter of the password's simvol");
   }
 }
-if (!emailAdControl) {
-  // @ simvol contrl in email
-  alert("Must be @ simvol in email");
-  emailControlPart = false;
-}
-if (emailEndWithLettr.toLocaleLowerCase == ".com") {
-  // for end with contorl in email
-  emailEndwithControl = true;
-}
-if (emailEndwithControl && emailControlPart) {
-  // end with control of the email
-  alert("Wrong end with of the email, must be -  .com");
-  emailControlPart = false;
+var passwordMinLetrLengthValue = passwordMinLettrLength(passwordUserInput);
+
+// //-- Password min 3 letr END--
+
+//--START Password one letr uppercase control
+
+function passwordMinLetrUpercase(passwordValue) {
+  var upperCaseCount = 0;
+  for (let i = 0; i < passwordValue.length; i++) {
+    if (
+      passwordValue.charCodeAt(i) >= 65 &&
+      passwordValue.charCodeAt(i) <= 90
+    ) {
+      upperCaseCount += 1;
+    }
+  }
+  return upperCaseCount;
 }
 
-if (emailValue.length < 10 && emailControlPart) {
-  // email length control
-  emailLengthCntrol = true;
-  alert("The length of the email can't be less 10 simvol");
-  emailControlPart = false;
+var passwordMinLtrUprcseValue = passwordMinLetrUpercase(passwordUserInput);
+var paswrMinLetrUprcsContrl = false;
+function passwordMinLetrUpprcaseControl(minUprcseLetr) {
+  if (passwordMinLtrUprcseValue < minUprcseLetr) {
+    alert(`Min ${minUprcseLetr} uppercase letter in the password`);
+    paswrMinLetrUprcsContrl = true;
+  }
 }
 
-if (!emailNumberControl && emailControlPart) {
-  //  minimum number control in email
-  alert("Minimum one number must in email");
-  emailControlPart = false;
-}
-// ------------------------- END email validation ---------------------------
+// password uppercase letr endr---
+
+// function passwordConsistencyWork() {
+//   if (paswrMnMaxContrl) {
+//     passwordLengthControl();
+//     console.log("OK-1");
+//   } else if (!paswrMinLetrCntrl) {
+//     console.log("OK-2");
+//     passwordControl(passwordMinLetrLengthValue, 3);
+//   } else if (!paswrMinLetrUprcsContrl) {
+//     console.log("OK-3");
+//     passwordMinLetrUpprcaseControl(1);
+//   }
+// }
+// passwordConsistencyWork();
+
+passwordLengthControl();
+passwordMinLetrUpprcaseControl(1);
+passwordControl(passwordMinLetrLengthValue, 3);
+
+// -------------------- END Pasword Control Validation ----------------
