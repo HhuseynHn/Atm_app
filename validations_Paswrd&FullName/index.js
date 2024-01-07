@@ -1,30 +1,30 @@
 /** @format */
 //------------------------ 1. Full Name control validation---------------------------------
 
-// function fullNameLength(fullName) {
-//   // fullname length return
-//   var result = fullName.trim().length;
-//   return result;
-// }
-// var fullNameUser = prompt("Please enter your Full Name:");
-// var fullNameCount = fullNameLength(fullNameUser);
+function fullNameLength(fullName) {
+  // fullname length return
+  var result = fullName.trim().length;
+  return result;
+}
+var fullNameUser = prompt("Please enter your Full Name:");
+var fullNameCount = fullNameLength(fullNameUser);
 
-// function fullNameLengthValidation(min, max) {
-//   // fullname length control
-//   var result;
-//   if (fullNameCount < min) {
-//     result = "lessThanMinLength";
-//   } else if (fullNameCount > max) {
-//     result = "moreThanMaxLength";
-//   }
-//   return result;
-// }
-// var fullNameValidationContrl= fullNameLengthValidation(3, 30);
-// if (fullNameValidationContrl == "lessThanMinLength") {
-//   alert("Full Name's length can't be less 3 simvol");
-// } else if (fullNameValidationContrl == "moreThanMaxLength") {
-//   alert("Full Name's length can't be more 30 simvol");
-// }
+function fullNameLengthValidation(min, max) {
+  // fullname length control
+  var result;
+  if (fullNameCount < min) {
+    result = "lessThanMinLength";
+  } else if (fullNameCount > max) {
+    result = "moreThanMaxLength";
+  }
+  return result;
+}
+var fullNameValidationContrl = fullNameLengthValidation(3, 30);
+if (fullNameValidationContrl == "lessThanMinLength") {
+  alert("Full Name's length can't be less 3 simvol");
+} else if (fullNameValidationContrl == "moreThanMaxLength") {
+  alert("Full Name's length can't be more 30 simvol");
+}
 
 //------------------------ END FUll Name control -------------------------------------------
 
@@ -51,10 +51,10 @@ var passwordLengthResult = passwrodLengthValidation(8, 15);
 var paswrMnMaxContrl = false;
 function passwordLengthControl() {
   if (passwordLengthResult == "lessMin") {
-    alert("Password length can't be less 8 simvols");
+    return "Password length can't be less 8 simvols";
     paswrMnMaxContrl = true;
   } else if (passwordLengthResult == "moreMax") {
-    alert("Password length can't be more 15 simvols");
+    return "Password length can't be more 15 simvols";
     paswrMnMaxContrl = true;
   }
 }
@@ -79,7 +79,7 @@ var paswrMinLetrCntrl = false;
 function passwordControl(passwordMinVlue, minLetter) {
   if (passwordMinVlue < minLetter) {
     paswrMinLetrCntrl = true;
-    alert("Minimum must be 3 lettter of the password's simvol");
+    return "Minimum must be 3 lettter of the password's simvol";
   }
 }
 var passwordMinLetrLengthValue = passwordMinLettrLength(passwordUserInput);
@@ -105,29 +105,30 @@ var passwordMinLtrUprcseValue = passwordMinLetrUpercase(passwordUserInput);
 var paswrMinLetrUprcsContrl = false;
 function passwordMinLetrUpprcaseControl(minUprcseLetr) {
   if (passwordMinLtrUprcseValue < minUprcseLetr) {
-    alert(`Min ${minUprcseLetr} uppercase letter in the password`);
+    return `Min ${minUprcseLetr} uppercase letter in the password`;
     paswrMinLetrUprcsContrl = true;
   }
 }
 
-// password uppercase letr endr---
-
-// function passwordConsistencyWork() {
-//   if (paswrMnMaxContrl) {
-//     passwordLengthControl();
-//     console.log("OK-1");
-//   } else if (!paswrMinLetrCntrl) {
-//     console.log("OK-2");
-//     passwordControl(passwordMinLetrLengthValue, 3);
-//   } else if (!paswrMinLetrUprcsContrl) {
-//     console.log("OK-3");
-//     passwordMinLetrUpprcaseControl(1);
-//   }
-// }
-// passwordConsistencyWork();
-
+//---------- For catch error consistently---------
 passwordLengthControl();
 passwordMinLetrUpprcaseControl(1);
 passwordControl(passwordMinLetrLengthValue, 3);
+var error = [];
+console.log(error);
+if (passwordLengthControl()) {
+  error.push(passwordLengthControl());
+}
+if (passwordMinLetrUpprcaseControl(1)) {
+  error.push(passwordMinLetrUpprcaseControl(1));
+}
+if (passwordControl(passwordMinLetrLengthValue, 3)) {
+  error.push(passwordControl(passwordMinLetrLengthValue, 3));
+}
+console.log(error);
+
+alert(error[0]);
+
+//---------------- end--
 
 // -------------------- END Pasword Control Validation ----------------
