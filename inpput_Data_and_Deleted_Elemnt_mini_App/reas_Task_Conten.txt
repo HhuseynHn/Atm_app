@@ -1,0 +1,15 @@
+	 
+		 + => 0 Proqrama daxil olanda - Proqramimiza xos gelidniz	
+		 + => komanda qebulu ucun daim prompt cixmalidir (komanda oturdukde bize qaytarmasi ucun)
+		 - => 2 yazanda user elave ede bilirk	
+		 - => 1 duymesini sixanda butun userleri gosterilsin	
+		 => validationlar olsun (data)	
+		 - => 3 indekse gore bize elementi getirsin	
+		 - => 4 indeks yollayaciiq hemin indekse gore datani silsin	
+		 - => 5 butun user leri silecek	
+		 => indeks yoxdursa yazsin bele indeks yoxdur	
+		 - => 6   -  update verilen indeksdeki datani deyisecek	
+		 - => "q" - elemntini daxil edende proqramdan cixacag	
+
+
+		 
