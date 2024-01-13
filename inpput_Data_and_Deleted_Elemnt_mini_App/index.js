@@ -1,8 +1,13 @@
 /** @format */
 
-alert("Welcome to our software");
 var allComands = [1, 2, 3, 4, 5, 6, "q"];
 var allUser = ["a", "b", "c", "d"];
+// welcome to program
+function welocme() {
+  alert("Welcome to our software");
+}
+//----------------------
+
 //----- Take comands from users for repeat comands call-----------
 function takeComandFromUser() {
   var infoFromUser = prompt(`Information table follow operation:
@@ -103,31 +108,34 @@ function allFunc(func) {
   return result;
 }
 //-----------------------------------
-//------ work program 
-var comandsFromUser;
-for (let i = 0; i < 7; i++) {
-  comandsFromUser = takeComandFromUser();
-  console.log(comandsFromUser);
-  if (comandsFromUser <= 6 && comandsFromUser > 0) {
-    allFunc(comandsFromUser);
-    if (confirm("Do you want to continue?")) {
-      continue;
+//------ work program
+function workFuncFinaly() {
+  var comandsFromUser;
+  for (let i = 0; i < 7; i++) {
+    comandsFromUser = takeComandFromUser();
+    if (comandsFromUser <= 6 && comandsFromUser > 0) {
+      allFunc(comandsFromUser);
+      if (confirm("Do you want to continue?")) {
+        continue;
+      } else {
+        break;
+      }
+    } else if (comandsFromUser == "q") {
+      if (allFunc(comandsFromUser)) {
+        break;
+      } else {
+        continue;
+      }
     } else {
-      break;
-    }
-  } else if (comandsFromUser == "q") {
-    if (allFunc(comandsFromUser)) {
-      break;
-    } else {
-      continue;
-    }
-  } else {
-    alert("You are enter wrong comand");
-    if (confirm("Are you continue")) {
-      continue;
-    } else {
-      break;
+      alert("You are enter wrong comand");
+      if (confirm("Are you continue")) {
+        continue;
+      } else {
+        break;
+      }
     }
   }
 }
+welocme();
+workFuncFinaly();
 //--------------------------

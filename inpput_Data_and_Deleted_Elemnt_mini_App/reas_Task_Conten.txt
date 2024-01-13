@@ -11,5 +11,10 @@
 		 - => 6   -  update verilen indeksdeki datani deyisecek	
 		 - => "q" - elemntini daxil edende proqramdan cixacag	
 
-
+ 1. her funksiya isin bitirdikden sonra geriye netice qaytarsin. 
+ 2. meselen elave ediremse user ugurla elave olundu . 
+ 3. problem olarsa problem mesajin  versin. 
+ 4. svalidation yazin (text minLength>3,maxLength<20, trim edin)
+ 5. Validations  -  indekse gore melumat axtaranda hemin indeks melumat bazasinda yoxdursa error cixsin
+                 -     
 		 
