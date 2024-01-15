@@ -17,4 +17,8 @@
  4. svalidation yazin (text minLength>3,maxLength<20, trim edin)
  5. Validations  -  indekse gore melumat axtaranda hemin indeks melumat bazasinda yoxdursa error cixsin
                  -     
+
+*** 1. Funksiyalari kontrol et  => her funksya tek emeliyyat yerine yetirsin
+	2. Check Validations add each input and output
+	4. Update 
 		 

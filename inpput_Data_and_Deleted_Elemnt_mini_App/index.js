@@ -3,8 +3,9 @@
 var allComands = [1, 2, 3, 4, 5, 6, "q"];
 var allUser = ["a", "b", "c", "d"];
 // welcome to program
-function welocme() {
-  alert("Welcome to our software");
+var text = "Welcome to our page";
+function enterUserGretting(word) {
+  return word;
 }
 //----------------------
 
@@ -23,91 +24,138 @@ function takeComandFromUser() {
 }
 //----- end calls comand from user funcition
 //------------
-function addUserToData(user) {
+function saveUser(user) {
   // for add new user
-  allUser.push(user);
-}
-//-------------
-function showAllUser() {
-  // for show All users
-  return allUser;
-}
-//-------------
-function showElement(indksElemnt) {
-  // show element According to indeks from user
-  return allUser.splice(indksElemnt, 1);
-}
-//-------------
-function removeElement(indksElmnt) {
-  // for remove element according indeks
-  var newUserList = [];
-  for (let i = 0; i < allUser.length; i++) {
-    if (i == indksElmnt) {
-      continue;
+  if (!allUser.includes(user)) {
+    var checkUser = checkLengthInpt(user);
+
+    if (!checkUser.length) {
+      allUser.push(user);
+      return "User successfully added to data";
     } else {
-      newUserList.push(allUser[i]);
+      return checkUser[0];
     }
+  } else {
+    return "User artiq movcuddur";
   }
-  allUser = newUserList;
-  return allUser;
+}
+//-------------
+function getAllUsers() {
+  // for show All users
+  return allUser.length ? allUser : "Users not found";
+}
+//-------------
+function getOneUser(indksElemnt) {
+  // show element According to indeks from user
+  return allUser[indksElemnt] ? allUser[indksElemnt] : "Not found user";
+}
+//-------------
+function removeOneUser(indksElmnt) {
+  // for remove element according indeks
+  var result = getOneUser(indksElmnt);
+  if (result !== "Not found user") {
+    allUser.splice(indksElmnt, 1);
+    return "User removed successfully";
+  }
+
+  return result;
 }
 //-------------
 
 function removeAllUser() {
   // for remove All data
-  return (allUser = []);
+
+  allUser = [];
+  return "All users successfully removed";
 }
 
 //------------
-
-function updateData(updateIndeks, updateValue) {
+function updateOneUser(updateIndeks, updateValue) {
   // for update new data to array
-  return (allUser[updateIndeks] = updateValue);
+  var result = getOneUser(updateIndeks);
+  if (result !== "Not found user") {
+    if (!allUser.includes(updateValue)) {
+      var chekInput = checkLengthInpt(updateValue);
+
+      if (!chekInput.length) {
+        allUser[updateIndeks] = updateValue;
+        return "User successfully updated";
+      } else {
+        return chekInput[0];
+      }
+    } else {
+      return "This name is already data ";
+    }
+  }
+
+  return result;
 }
 //------------
 
+//--------------------
 function exitProgram() {
   // exit program
-  return confirm("Are you sure exit program");
+  var result = confirm("Are you sure exit program");
+  return result;
 }
 //------------
+
+//-------------- validatation input length from user--
+
+function checkLengthInpt(input) {
+  // lenght input check
+  var erorrList = [];
+  var lengthInpt = input.length;
+  if (lengthInpt < 3) {
+    erorrList.push("MinLength can't be less 3 elemnt");
+  } else if (lengthInpt > 20) {
+    erorrList.push("MaxLength can't be more 20 elemnt");
+  } else if (lengthInpt == 0) {
+    erorrList.push("Istifadeci adi bos ola bilmez");
+  }
+
+  return erorrList;
+}
+//-----------------------
+
 //----------- All comands------------
 function allFunc(func) {
   var result;
   switch (func) {
     case "q":
-      result = exitProgram();
+      result = alert(exitProgram());
       break;
     case "1":
-      result = console.log(showAllUser());
+      result = alert(getAllUsers());
       break;
     case "2":
-      result = addUserToData(prompt("Enter new user"));
+      result = alert(saveUser(prompt("Enter new user").trim()));
       break;
     case "3":
-      result = console.log(
-        showElement(prompt("Enter user's indeks for to watch"))
-      );
+      result = alert(getOneUser(prompt("Enter user's indeks for to watch")));
       break;
     case "4":
-      result = removeElement(prompt("Enter indeks for remove"));
+      result = alert(removeOneUser(prompt("Enter indeks for remove")));
       break;
     case "5":
-      result = removeAllUser();
+      result = alert(removeAllUser());
       break;
     case "6":
-      result = updateData(
-        prompt("Enter update indeks"),
-        prompt("Enter update value")
+      result = alert(
+        updateOneUser(
+          prompt("Enter update indeks").trim(),
+          prompt("Enter update value").trim()
+        )
       );
       break;
     default:
-      result = "You are enter wrong comand";
+      result = alert("You are enter wrong comand");
       break;
   }
   return result;
 }
 //-----------------------------------
+
 //------ work program
 function workFuncFinaly() {
   var comandsFromUser;
@@ -127,7 +175,7 @@ function workFuncFinaly() {
         continue;
       }
     } else {
-      alert("You are enter wrong comand");
+      alert("Wrong comands you are enter");
       if (confirm("Are you continue")) {
         continue;
       } else {
@@ -136,6 +184,10 @@ function workFuncFinaly() {
     }
   }
 }
-welocme();
+
+alert(enterUserGretting(text));
+
+
+
 workFuncFinaly();
 //--------------------------
