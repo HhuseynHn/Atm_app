@@ -1,0 +1,10 @@
+1. kecen dersin tasklarin (qalanlari yazirsiniz) => 2 task
+
+2. verilen ededi tersine ceviren app yazin meselen 231 -> (132) split falan istifade etrmirsiniz.(stringe falan cevirim ne edim olmasin )
+
+3. // ”       Salam    necesen        ishler nece          gedir       “   ←-----   metnini
+// “Salam necesen ishler nece gedir” ←--------      halina getirin.
+
+4. Ele bir method yazin ki:  HeLLo WorlD-> chevrilsin olsun hEllO wORLd.
+// Yeni boyuk herfler kichikle, kichik herfler boyukle evez olsun
+// hint:  ya ASCII ←--interviewlarda bu ustun tutulur
