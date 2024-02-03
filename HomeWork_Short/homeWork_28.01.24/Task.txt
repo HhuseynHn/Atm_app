@@ -1,0 +1,5 @@
+1. array verilib . daxilindeki, 2 ye tam bolunmeyen elementleri secirsiniz. daha sonra ise bunlarin ededi ortasin tapirsiniz. mesleen [2,3,5,6] -> 3+5/2
+
+2. d verilen string'de x ve y herfinin sayini   tapirig. ve onlardan alinan neticeler 2 ye tam bolunurse funksiya geriye true qaytarsin, eks halda false. ola biler 0 sayda tapsin? bu zamanda false qaytarsin. meselen "xyuixpy" x-2, y-2 -> true
+
+her iki task yeni kecdiyimiz funksiyalar ile yazilacaq. forun basin buraxin!

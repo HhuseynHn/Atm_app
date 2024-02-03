@@ -37,22 +37,22 @@
 // Yeni boyuk herfler kichikle, kichik herfler boyukle evez olsun
 // hint:  ya ASCII ←--interviewlarda bu ustun tutulur
 
-var inptText = "HeLLo WorlD";
+// var inptText = "HeLLo WorlD";
 
-function contraLetrFunc(txt) {
-  var result = "";
-  var charCod;
-  for (let i = 0; i < txt.length; i++) {
-    charCod = txt.charCodeAt(i);
-    if (charCod >= 97 && charCod <= 122) {
-      result += String.fromCharCode(charCod - 32);
-    } else if (charCod >= 65 && charCod <= 90) {
-      result += String.fromCharCode(charCod + 32);
-    } else {
-      result += txt[i];
-    }
-  }
-  return result;
-}
-console.log("Before: ", inptText);
-console.log("After: ", contraLetrFunc(inptText));
+// function contraLetrFunc(txt) {
+//   var result = "";
+//   var charCod;
+//   for (let i = 0; i < txt.length; i++) {
+//     charCod = txt.charCodeAt(i);
+//     if (charCod >= 97 && charCod <= 122) {
+//       result += String.fromCharCode(charCod - 32);
+//     } else if (charCod >= 65 && charCod <= 90) {
+//       result += String.fromCharCode(charCod + 32);
+//     } else {
+//       result += txt[i];
+//     }
+//   }
+//   return result;
+// }
+// console.log("Before: ", inptText);
+// console.log("After: ", contraLetrFunc(inptText));
