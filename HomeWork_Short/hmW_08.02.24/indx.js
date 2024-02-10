@@ -48,3 +48,49 @@
 // var inptNum = -6;
 // console.log(ceilFun(inptNum));
 //-------------------------------------------------------
+// var maxFn = (...ar) => {
+//   var maxN = 0;
+//   var secnMax = 0;
+//   for (let i of ar) {
+//     if (i > maxN) {
+//       maxN = i;
+//     }
+//   }
+//   var ary = ar.splice(maxFn, 1);
+//   console.log(ary);
+//   return maxN;
+// };
+
+// console.log(maxFn(2, 4, 6, 65, 8));
+
+// var ary = [2, 5, 6, 8, 10, 15];
+
+// var result = ary.filter((a) => a !== 8);
+
+// console.log(result);
+
+//------------------------------------------------
+// var strn = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+// var lengthFunc = (lngth) => {
+//   var randStrng = "";
+//   for (let i = 0; i < lngth; i++) {
+//     var randIndx = parseInt(Math.random() * strn.length);
+//     randStrng += strn[randIndx];
+//     }
+//     return randStrng
+// };
+
+// var nmbLgth = 20;
+// console.log(lengthFunc(nmbLgth));
+
+
+
+
+
+
+
+
+
+
+
