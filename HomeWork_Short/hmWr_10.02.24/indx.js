@@ -81,54 +81,91 @@
 // console.log("Second_MIN: ", secndMinFun(gnrlAry));
 // //--------------------------------------------------------------------
 //----------------------- Random sentence-----------------------------------
-var words = [
-  "bu",
-  "asandir",
-  "men",
-  "bilirem",
-  "salam",
-  "necesen",
-  "ne var",
-  "ne yox",
-  "neynirsen",
-  "isler",
-  "necedir",
-  "qonsumuz",
-  "yaxsidir",
-];
+// var words = [
+//   "bu",
+//   "asandir",
+//   "men",
+//   "bilirem",
+//   "salam",
+//   "necesen",
+//   "ne var",
+//   "ne yox",
+//   "neynirsen",
+//   "isler",
+//   "necedir",
+//   "qonsumuz",
+//   "yaxsidir",
+// ];
 
-var getRandInd = (maxLeng) => parseInt(Math.random() * maxLeng.length);
+// var getRandInd = (maxLeng) => parseInt(Math.random() * maxLeng.length);
 
-var getRandIndAry = () => {
-  var randIndAry = [];
-  while (true) {
-    var firstWord = getRandInd(words);
-    if (!randIndAry.includes(firstWord)) {
-      randIndAry.push(firstWord);
-    }
-    if (randIndAry.length == 5) {
-      break;
-    }
-  }
+// var getRandIndAry = () => {
+//   var randIndAry = [];
+//   while (true) {
+//     var firstWord = getRandInd(words);
+//     if (!randIndAry.includes(firstWord)) {
+//       randIndAry.push(firstWord);
+//     }
+//     if (randIndAry.length == 5) {
+//       break;
+//     }
+//   }
 
-  return randIndAry;
-};
-var getSentence = (aryWords) => {
-  var indxAry = getRandIndAry();
-  var newRandAry = [];
-  for (let i = 0; i < indxAry.length; i++) {
-    newRandAry.push(words[indxAry[i]]);
-  }
-  return newRandAry.join(" ");
-};
+//   return randIndAry;
+// };
+// var getSentence = (aryWords) => {
+//   var indxAry = getRandIndAry();
+//   var newRandAry = [];
+//   for (let i = 0; i < indxAry.length; i++) {
+//     newRandAry.push(words[indxAry[i]]);
+//   }
+//   return newRandAry.join(" ");
+// };
 
-var workFunc = () => {
-  alert(getSentence(words));
-  var result = confirm("Are you continue?");
-  while (result) {
-    alert(getSentence(words));
-    var result = confirm("Are you continue?");
-  }
-};
-workFunc();
+// var workFunc = () => {
+//   alert(getSentence(words));
+//   var result = confirm("Are you continue?");
+//   while (result) {
+//     alert(getSentence(words));
+//     var result = confirm("Are you continue?");
+//   }
+// };
+// workFunc();
 //------------------------------------------------- END -------------------------
+
+// 1. 2 ci max
+// 2. elementleri tersine cevir.
+// 3. murekkeblerin cixardirsiniz.
+// 4. min vereceksiniz
+
+
+const array = [
+  [23, 4, 32, 12],
+  [23, 12, 45, 67],
+  [12, 34, 121]]
+
+var secndMax = (ary) => {
+  var result = ary.map((a) => a.filter((n) => n !== Math.max(...a)));
+console.log(result);
+}
+      
+
+console.log(secndMax(array));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
