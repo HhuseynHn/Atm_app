@@ -1,0 +1,4 @@
+1. yeni obyekt yaradir
+2. dogum tarixini silir
+3. yasini elave edir
+4. Funksiya ile yasin tamam olmasina neqeder qaldigini cixardir
