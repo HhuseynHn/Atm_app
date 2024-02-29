@@ -1,0 +1,7 @@
+Promtdan deyer isteyin
++ 1.  daxil edende user elave ede bilek
++ 2. daxil edende verilen id ye gore useri getire bilek (tapmasa not found gorunsun)
++ 3.  Daxil edende Verilen idye gore user sile bilek. Tapmasa eyni qaydada.
+4. Daxil edende Verilen id deki useri yeniliye bilsin. Tapmasa eyni qaydada
++ 5. Daxil edende prpgram sonlansin.
++ User id, name , surname , age propertylerinden ibaret olacaq.

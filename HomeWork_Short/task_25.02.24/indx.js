@@ -171,18 +171,113 @@
 // console.log(result(peoples));
 //-------------------------------------------------------------------
 
-let userCount = prompt("Enter user count");
-let userName1 = prompt("Enter Name");
-let userSurname1 = prompt("Enter Surname");
-let userAge1 = prompt("Enter Age");
+// let userCount = prompt("Enter user count");
+// let userName1 = prompt("Enter Name");
+// let userSurname1 = prompt("Enter Surname");
+// let userAge1 = prompt("Enter Age");
 
-let uesrsFoo = (id, userName, userSurname, userAge) => {
-  this.id = id;
-  this.userName = userName;
-  this.userSurname = userSurname;
-  this.userAge = userAge;
+// let uesrsFoo = (id, userName, userSurname, userAge) => {
+//   this.id = id;
+//   this.userName = userName;
+//   this.userSurname = userSurname;
+//   this.userAge = userAge;
+// };
+// let users = [];
+// for (let i = 0; i < userCount; i++) {
+//   users.push();
+// }
+//---------------------------------------------- BIND ----------------------
+const user = {
+  name: "John",
+  age: 36,
 };
-let users = [];
-for (let i = 0; i < userCount; i++) {
-  users.push();
+
+const user2 = {
+  name: "Baktar",
+  age: 37,
+};
+
+function global(text, ageInpt) {
+  console.log(`${this.name} ${text} ${ageInpt}`);
 }
+
+var copyGlobal = global.bind(user);
+var copyGlobal2 = global.bind(user2);
+
+// copyGlobal("Hello world", 25);
+// copyGlobal2("Hello Baku", 100);
+//---------------------------------------------- CALL -----------------------
+
+// global.call(user, "My developer friend", 16)
+// global.call(user2, "Your life", 13)
+
+//------------------------------------------------------------------
+
+//--------------------------------------- APLY ---------------------
+
+// global.apply(user, ["My beatyfull life", 1987])
+// global.apply(user2,["The life is beatyfull",2024])
+
+//-----------------------------------------------------
+
+// const nmb = [1, 5, 6, 45, 46];
+// let car = {
+//   name: "BMW",
+//   speed: 500,
+//   speed: 500,
+//   speed: 500,
+// };
+// console.log(Object.entries(car));
+
+// for (let [key, value] of Object.entries(car)) {
+
+//   console.log(`${key} : ${value}`);
+// }
+
+//-------------------------------------------------------------
+// let cntr = new Object();
+// cntr.fo = 50;
+// cntr.nme = "Huseyn";
+// cntr.srNme = "Huseynov";
+// console.log(cntr);
+//-------------------------------------------------------------
+
+let obj = {
+  name: "Huseyn",
+  surname: "Huseynov",
+  age: 35,
+};
+console.log("Orjanl", obj);
+console.log("Changed", obj);
+
+
+Object.preventExtensions(obj)
+
+delete obj.name
+obj.surname="VEKA"
+console.log("After", obj);
+
+// let count = prompt("Enter count");
+// let i = 1;
+// let users = [];
+
+// function User(id, name, surname, age) {
+//   this.id = id;
+//   this.name = name;
+//   this.surname = surname;
+//   this.age = age;
+// }
+
+// while (i <= count) {
+//   users.push(
+//     new User(
+//       i,
+//       prompt("Enter name"),
+//       prompt("Enter surname"),
+//       prompt("Enter age")
+//     )
+//   );
+//   i++;
+// }
+
+// console.log(users);
