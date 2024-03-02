@@ -22,17 +22,17 @@ function addUser(id, name, surname, age) {
   this.age = age;
 }
 let getUser = (userId, data) => {
-  let findUserIndex = data.findIndex((elm) => elm.id == userId);
-  if (findUserIndex == -1) {
+  let findUser = data.find((elm) => elm.id == userId);
+  if (!findUser) {
     return {
       success: false,
       massage: "Not found user",
     };
   }
-  let userFind = data[findUserIndex];
+
   return {
     massage: "User found",
-    data: userFind,
+    data: findUser,
   };
 };
 let removeUser = (userId, data) => {
@@ -52,11 +52,7 @@ let removeUser = (userId, data) => {
     massage: "User successfully deleted",
   };
 };
-let updateUserElement = (name, surname, age) => {
-  this.name = name;
-  this.surname = surname;
-  this.age = age;
-};
+
 let updateUserFoo = (userId, data, name, surname, age) => {
   let findUserIndex = data.findIndex((elm) => elm.id == userId);
 
