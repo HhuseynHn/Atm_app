@@ -5,3 +5,11 @@ Promtdan deyer isteyin
 4. Daxil edende Verilen id deki useri yeniliye bilsin. Tapmasa eyni qaydada
 + 5. Daxil edende prpgram sonlansin.
 + User id, name , surname , age propertylerinden ibaret olacaq.
+
+
+
+1. Add user obyekt
++ 2. Get user
++ 3. 
++ 4
++ 5
